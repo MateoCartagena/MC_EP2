@@ -9,7 +9,7 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 	}
 
-	/*
+    
 private void OnCounterClicked(object sender, EventArgs e)
 	{
 		count++;
@@ -21,6 +21,17 @@ private void OnCounterClicked(object sender, EventArgs e)
 
 		SemanticScreenReader.Announce(CounterBtn.Text);
 	}
-	*/
+	
+
+
+    private void OnRadioButtonCheckedChanged(object sender, CheckedChangedEventArgs e)
+    {
+        var radioButton = (RadioButton)sender;
+        if (radioButton.IsChecked)
+        {
+            SelectedOptionLabel.Text = radioButton.Content.ToString();
+        }
+    }
 }
+
 
