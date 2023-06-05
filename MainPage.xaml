@@ -4,76 +4,47 @@
              x:Class="MC_EP2.MainPage">
 
     <ScrollView>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-
-            <StackLayout Grid.Row="0" Grid.Column="0" Spacing="25" Padding="30,0" VerticalOptions="Center">
-                <Label
-                Text="Ingresa tu número de telefono:"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
+        <VerticalStackLayout Spacing="10" Padding="30">
+            <Entry
+                x:Name="PhoneNumberEntry"
+                Placeholder="Enter your phone number"
                 HorizontalOptions="Center" />
 
-                <!--
-                <Label
-                    Text="Welcome to .NET Multi-platform App UI"
-                    SemanticProperties.HeadingLevel="Level2"
-                    SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                    FontSize="18"
-                    HorizontalOptions="Center" />
-                -->
-
-                <Entry
-                    x:Name="PhoneNumberEntry"
-                    Placeholder="Enter your phone number"
-                    HorizontalOptions="Center" />
-
+            <HorizontalStackLayout Spacing="10">
                 <Entry
                     x:Name="TextFieldEntry"
                     Placeholder="Enter some text"
-                    HorizontalOptions="Center" />
-            </StackLayout>
+                    HorizontalOptions="StartAndExpand" />
 
-            <StackLayout Grid.Row="0" Grid.Column="1" Spacing="10" Padding="0,25,30,0" VerticalOptions="Center">
-                <Label Text="Choose an option:" HorizontalOptions="Center" />
+                <VerticalStackLayout Spacing="10">
+                    <RadioButton
+                        x:Name="Option1RadioButton"
+                        GroupName="Options" />
 
-                <RadioButton Content="3"
-                             Value="3"/>
-                <RadioButton Content="5"
-                             Value="5"/>
-                <RadioButton Content="10"
-                             Value="10"/>
-                
-                <!--
-                <RadioButton
-                    x:Name="Option1RadioButton"
-                    Text="Option 1"
-                    GroupName="Options"
-                    HorizontalOptions="Center" />
-
-                <RadioButton
-                    x:Name="Option2RadioButton"
-                    Text="Option 2"
-                    GroupName="Options"
-                    HorizontalOptions="Center" />
-
-                <RadioButton
-                    x:Name="Option3RadioButton"
-                    Text="Option 3"
-                    GroupName="Options"
-                    HorizontalOptions="Center" />
-                -->
-            </StackLayout>
+                    <RadioButton
+                        x:Name="Option2RadioButton"
+                        GroupName="Options" />
 
 
-        </Grid>
+                </VerticalStackLayout>
+
+
+                <Picker
+                x:Name="OptionPicker"
+                Title="Select an option"
+                HorizontalOptions="FillAndExpand">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Option A</x:String>
+                            <x:String>Option B</x:String>
+                            <x:String>Option C</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
+
 
