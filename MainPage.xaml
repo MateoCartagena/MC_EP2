@@ -5,46 +5,58 @@
 
     <ScrollView>
         <VerticalStackLayout Spacing="10" Padding="30">
+
+            <Label
+                Text="Ingresa tu número de telefono:"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
             <Entry
-                x:Name="PhoneNumberEntry"
+                x:Name="Telefono"
                 Placeholder="Enter your phone number"
                 HorizontalOptions="Center" />
 
             <HorizontalStackLayout Spacing="10">
-                <Entry
-                    x:Name="TextFieldEntry"
-                    Placeholder="Enter some text"
-                    HorizontalOptions="StartAndExpand" />
+
+                <VerticalStackLayout Spacing="10">
+                    <Label
+                    Text="Cuál es tu operador?"
+                    SemanticProperties.HeadingLevel="Level1"
+                    FontSize="32"
+                    HorizontalOptions="Center" />
+
+                    <Picker
+                    x:Name="OptionPicker"
+                    Title="Cuánto desea recargar?"
+                    HorizontalOptions="FillAndExpand">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Movistar</x:String>
+                                <x:String>SotoFon</x:String>
+                                <x:String>Tuti</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </VerticalStackLayout>
 
                 <VerticalStackLayout Spacing="10">
                     <RadioButton
                         x:Name="Option1RadioButton"
+                        Content="Option 1"
                         GroupName="Options" />
 
                     <RadioButton
                         x:Name="Option2RadioButton"
+                        Content="Option 2"
                         GroupName="Options" />
-
-
                 </VerticalStackLayout>
-
-
-                <Picker
-                x:Name="OptionPicker"
-                Title="Select an option"
-                HorizontalOptions="FillAndExpand">
-                    <Picker.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>Option A</x:String>
-                            <x:String>Option B</x:String>
-                            <x:String>Option C</x:String>
-                        </x:Array>
-                    </Picker.ItemsSource>
-                </Picker>
-
             </HorizontalStackLayout>
+
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
+
 
 
