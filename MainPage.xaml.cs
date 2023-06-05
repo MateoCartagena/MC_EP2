@@ -2,14 +2,14 @@
 
 public partial class MainPage : ContentPage
 {
-	
+	//private int count = 0;
 
 	public MainPage()
 	{
 		InitializeComponent();
 	}
 
-    
+  /*  
 private void OnCounterClicked(object sender, EventArgs e)
 	{
 		count++;
@@ -20,7 +20,7 @@ private void OnCounterClicked(object sender, EventArgs e)
 			CounterBtn.Text = $"Clicked {count} times";
 
 		SemanticScreenReader.Announce(CounterBtn.Text);
-	}
+	}*/
 	
 
 
@@ -31,6 +31,11 @@ private void OnCounterClicked(object sender, EventArgs e)
         {
             SelectedOptionLabel.Text = radioButton.Content.ToString();
         }
+    }
+
+    private async void OnRecargarButtonClicked(object sender, EventArgs e)
+    {
+        await DisplayAlert("Recarga Exitosa", "La recarga se realizó exitosamente.", "Aceptar");
     }
 }
 
